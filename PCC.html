@@ -120,6 +120,20 @@
   </script>
   <script>function openFile21() { var url = "pcc21.pdf"; window.open("./generic/web/viewer.html?file=" + url); }
   </script>
+    <script type="text/javascript">
+      // 禁用右键
+      document.addEventListener('contextmenu', function(e){
+          e.preventDefault();
+      });
+
+      // 禁用查看源代码（Ctrl+U 或 Ctrl+Shift+I）
+      document.addEventListener('keydown', function(e){
+          if (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 73)) {
+              e.preventDefault();
+          }
+      });
+  </script>
+
 </head>
 
 
