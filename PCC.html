@@ -9,6 +9,8 @@
     content="Guodong Du, Yanshan University. Data mining, machine learning and its applications in healthcare. 杜国栋 燕山大学">
   <meta name="keywords"
     content="Guodong Du, Yanshan University. Data mining, machine learning and its applications in healthcare. 杜国栋 燕山大学">
+    <meta name="robots" content="noindex, nofollow"> <!-- 防止搜索引擎抓取 -->
+
 
   <link rel="stylesheet" type="text/css" href="./css/gddu.css">
 
@@ -67,6 +69,18 @@
       -webkit-animation-name: nodeInserted;
       -o-animation-name: nodeInserted;
     }
+/* 在整个页面上覆盖一个透明的层，用于干扰截图 */
+.screenshot-prevent-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0); /* 完全透明的背景 */
+            pointer-events: none; /* 确保层不会干扰鼠标事件 */
+            z-index: 9999;
+        }
+
   </style>
 
   <!--pdf view code</script>-->
@@ -120,6 +134,10 @@
   </script>
   <script>function openFile21() { var url = "pcc21.pdf"; window.open("./generic/web/viewer.html?file=" + url); }
   </script>
+  <script>function openFile22() { var url = "pcc22.pdf"; window.open("./generic/web/viewer.html?file=" + url); }
+  </script>
+  <script>function openFile23() { var url = "pcc23.pdf"; window.open("./generic/web/viewer.html?file=" + url); }
+  </script>
     <script type="text/javascript">
       // 禁用右键
       document.addEventListener('contextmenu', function(e){
@@ -132,6 +150,26 @@
               e.preventDefault();
           }
       });
+      // 禁止复制
+      document.addEventListener('copy', function(e){
+            e.preventDefault();
+        }, false);
+
+        // 禁止选择文本
+        document.addEventListener('selectstart', function(e){
+            e.preventDefault();
+        }, false);
+// 添加干扰层以防止截图
+function addScreenshotPreventLayer() {
+            var layer = document.createElement('div');
+            layer.className = 'screenshot-prevent-layer';
+            document.body.appendChild(layer);
+        }
+
+        // 页面加载完毕后添加干扰层
+        window.onload = addScreenshotPreventLayer;
+
+
   </script>
 
 </head>
@@ -271,7 +309,13 @@
                 </p>  
                 <p style="margin-left:0px;">
                   第21次课： <a href="javascript:void(0)" onclick="openFile21()">指令系统-第一次课</a><br>
-                </p>                          
+                </p>    
+                <p style="margin-left:0px;">
+                  第22次课： <a href="javascript:void(0)" onclick="openFile22()">指令系统-第二次课</a><br>
+                </p>            
+                <p style="margin-left:0px;">
+                  第23次课： <a href="javascript:void(0)" onclick="openFile23()">控制器的组成-第一次课</a><br>
+                </p>                
                 <p>
                   <font size="+0">
                   </font>
