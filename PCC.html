@@ -80,7 +80,9 @@
             pointer-events: none; /* 确保层不会干扰鼠标事件 */
             z-index: 9999;
         }
-
+        #content {
+    display: none; /* 默认不显示受保护的内容 */
+}
   </style>
 
   <!--pdf view code</script>-->
@@ -138,6 +140,24 @@
   </script>
   <script>function openFile23() { var url = "pcc23.pdf"; window.open("./generic/web/viewer.html?file=" + url); }
   </script>
+
+<script>
+  // 此处仅为示例，实际应用中不应在前端硬编码密码
+  const correctPassword = "123456";
+  
+  function checkPassword() {
+      var password = document.getElementById("passwordInput").value;
+      if (password === correctPassword) {
+          // 密码正确，显示内容
+          document.getElementById("content").style.display = "block";
+          document.getElementById("passwordPrompt").style.display = "none";
+      } else {
+          // 密码错误，提示用户
+          alert("Incorrect password. Please try again.");
+      }
+  }
+  </script>
+
     <script type="text/javascript">
       // 禁用右键
       document.addEventListener('contextmenu', function(e){
@@ -176,7 +196,11 @@ function addScreenshotPreventLayer() {
 
 
 <body>
-
+  <div id="passwordPrompt">
+    <h2>请联系老师获取密码</h2>
+    <input type="password" id="passwordInput" placeholder="Enter Password">
+    <button onclick="checkPassword()">Submit</button>
+</div>
   <div id="content">
 
     <div id="left">
@@ -327,7 +351,7 @@ function addScreenshotPreventLayer() {
 
                 <a href="https://clustrmaps.com/site/1b859" title="Visit tracker"><img
                     src="//www.clustrmaps.com/map_v2.png?d=21-3V03Nn08D6sH3mybU3sKezo0zY2SwWavYQh9_Q4I&cl=ffffff"></a>
-                <p style="margin-left:0px;"></p>Last update: Oct 19, 2024.
+                <p style="margin-left:0px;"></p>Last update: Oct 28, 2024.
                 </p>
 
     </div>
